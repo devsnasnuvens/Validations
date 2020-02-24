@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validations.WithExceptions.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validations.WithPatterns.API", "src\Validations.WithPatterns.API\Validations.WithPatterns.API.csproj", "{792DBE26-1218-4F58-BC59-525C55E80A7A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validations.Domain", "src\Validations.Domain\Validations.Domain.csproj", "{CAE892CD-1E41-4D25-94B0-7131789A83B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,9 +48,22 @@ Global
 		{792DBE26-1218-4F58-BC59-525C55E80A7A}.Release|x64.Build.0 = Release|Any CPU
 		{792DBE26-1218-4F58-BC59-525C55E80A7A}.Release|x86.ActiveCfg = Release|Any CPU
 		{792DBE26-1218-4F58-BC59-525C55E80A7A}.Release|x86.Build.0 = Release|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Debug|x64.Build.0 = Debug|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Debug|x86.Build.0 = Debug|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Release|x64.ActiveCfg = Release|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Release|x64.Build.0 = Release|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Release|x86.ActiveCfg = Release|Any CPU
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{91B8E36B-0953-4CEF-BE40-3888A079230E} = {142F76A1-6419-4D40-ADAB-A117DE0D201B}
 		{792DBE26-1218-4F58-BC59-525C55E80A7A} = {142F76A1-6419-4D40-ADAB-A117DE0D201B}
+		{CAE892CD-1E41-4D25-94B0-7131789A83B7} = {142F76A1-6419-4D40-ADAB-A117DE0D201B}
 	EndGlobalSection
 EndGlobal
