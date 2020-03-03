@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <ItemGroup>
-    <ProjectReference Include="..\Validations.Domain\Validations.Domain.csproj" />
     <ProjectReference Include="..\Validations.Utils\Validations.Utils.csproj" />
   </ItemGroup>
 

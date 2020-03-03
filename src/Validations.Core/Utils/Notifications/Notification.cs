@@ -1,4 +1,4 @@
-﻿namespace Validations.Utils.Notifications
+﻿namespace Validations.Core.Utils.Notifications
 {
     public class Notification
     {

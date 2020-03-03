@@ -1,6 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-using Validations.Domain.Entities;
+using Validations.Core.Domain.Entities;
 using Validations.WithExceptions.API.ViewModels;
 
 namespace Validations.WithExceptions.API.Controllers
