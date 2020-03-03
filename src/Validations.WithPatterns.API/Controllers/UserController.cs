@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Validations.Core.Domain.Entities;
 using Validations.WithPatterns.API.ViewModels;
 
 namespace Validations.WithPatterns.API.Controllers
@@ -10,7 +11,7 @@ namespace Validations.WithPatterns.API.Controllers
         [HttpPost]
         public void Create([FromBody] UserViewModel userViewModel) 
         {
-            var user = new Domain.Entities.User(userViewModel.Name, userViewModel.Email, userViewModel.PhoneNumber);
+            var user = new User(userViewModel.Name, userViewModel.Email, userViewModel.PhoneNumber);
             
         }
     }

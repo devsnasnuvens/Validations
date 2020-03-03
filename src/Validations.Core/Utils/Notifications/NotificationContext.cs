@@ -39,12 +39,12 @@ namespace Validations.Core.Utils.Notifications
 			_notifications.AddRange(notifications);
 		}
 
-		public void AddNotifications(ValidationResult validationResult)
-		{
-			foreach (var error in validationResult.Errors)
-			{
-				AddNotification(error.ErrorCode, error.ErrorMessage);
-			}
-		}
+		//public void AddNotifications(ValidationResult validationResult)
+		//{
+		//	foreach (var error in validationResult.Errors)
+		//	{
+		//		AddNotification(error.ErrorCode, error.ErrorMessage);
+		//	}
+		//}
 	}
 }
