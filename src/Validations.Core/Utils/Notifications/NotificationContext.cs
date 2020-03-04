@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using FluentValidation.Results;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Validations.Core.Utils.Notifications
@@ -39,12 +40,12 @@ namespace Validations.Core.Utils.Notifications
 			_notifications.AddRange(notifications);
 		}
 
-		//public void AddNotifications(ValidationResult validationResult)
-		//{
-		//	foreach (var error in validationResult.Errors)
-		//	{
-		//		AddNotification(error.ErrorCode, error.ErrorMessage);
-		//	}
-		//}
+		public void AddNotifications(ValidationResult validationResult)
+		{
+			foreach (var error in validationResult.Errors)
+			{
+				AddNotification(error.ErrorCode, error.ErrorMessage);
+			}
+		}
 	}
 }
