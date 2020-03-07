@@ -23,9 +23,7 @@ namespace Validations.Core.Application.Services
                 _notificationContext.AddNotifications(user.ValidationResult);
                 return default;
             }
-
-
-
+                       
             return new UserViewModel()
             {
                 Id = user.Id,

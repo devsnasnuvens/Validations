@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Validations.Core.Application.Interfaces;
 using Validations.Core.Application.ViewModels;
-using Validations.Core.Utils.Notifications;
 
 namespace Validations.WithPatterns.API.Controllers
 {
@@ -17,11 +16,10 @@ namespace Validations.WithPatterns.API.Controllers
         }
 
         [HttpPost]
-        public void Create([FromBody] UserViewModel userViewModel)
+        public UserViewModel Create([FromBody] UserViewModel userViewModel)
         {
-            _userAppService.Create(userViewModel);
-
-
+            var userCreated = _userAppService.Create(userViewModel);
+            return userCreated;
         }
     }
 }
