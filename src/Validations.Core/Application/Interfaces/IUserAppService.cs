@@ -4,6 +4,7 @@ namespace Validations.Core.Application.Interfaces
 {
     public interface IUserAppService
     {
-        UserViewModel Create(UserViewModel userViewModel);
+        UserViewModel CreateWithException(UserViewModel userViewModel);
+        UserViewModel Create(UserViewModel userViewModel);        
     }
 }
