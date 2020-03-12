@@ -3,6 +3,7 @@ using Validations.Core.Application.Interfaces;
 using Validations.Core.Application.ViewModels;
 using Validations.Core.Domain.Entities;
 using Validations.Core.Utils.Notifications;
+using Validations.Core.Utils.Results;
 
 namespace Validations.Core.Application.Services
 {
@@ -45,23 +46,36 @@ namespace Validations.Core.Application.Services
             };
         }
 
-        public UserViewModel Create(UserViewModel userViewModel)
+        public Result<UserViewModel> Create(UserViewModel userViewModel)
         {
+            if (string.IsNullOrWhiteSpace(userViewModel.Name))
+            {
+                _notificationContext.AddNotification("User", "Enter the User name!");
+            }
+
+            if (string.IsNullOrWhiteSpace(userViewModel.Email))
+            {
+                _notificationContext.AddNotification("User", "Enter the User e-mail!");
+            }
+
+            if (string.IsNullOrWhiteSpace(userViewModel.PhoneNumber))
+            {
+                _notificationContext.AddNotification("User", "Enter the User phone number!");
+            }
+
+            if (_notificationContext.HasNotifications)
+                return default;
+
             var user = new User(userViewModel.Name, userViewModel.Email, userViewModel.PhoneNumber);
 
-            if (!user.Valid)
-            {
-                _notificationContext.AddNotifications(user.ValidationResult);
-                return default;
-            }
-                       
-            return new UserViewModel()
-            {
-                Id = user.Id,
-                Name = user.Name,
-                Email = user.Email,
-                PhoneNumber = user.PhoneNumber
-            };
+            return default;
+            //return new UserViewModel()
+            //{
+            //    Id = user.Id,
+            //    Name = user.Name,
+            //    Email = user.Email,
+            //    PhoneNumber = user.PhoneNumber
+            //};
         }
     }
 }

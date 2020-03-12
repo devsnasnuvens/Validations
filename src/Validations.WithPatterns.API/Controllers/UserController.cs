@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Validations.Core.Application.Interfaces;
 using Validations.Core.Application.ViewModels;
+using Validations.Core.Utils.Results;
 
 namespace Validations.WithPatterns.API.Controllers
 {
@@ -16,7 +17,7 @@ namespace Validations.WithPatterns.API.Controllers
         }
 
         [HttpPost]
-        public UserViewModel Create([FromBody] UserViewModel userViewModel)
+        public Result<UserViewModel> Create([FromBody] UserViewModel userViewModel)
         {
             var userCreated = _userAppService.Create(userViewModel);
             return userCreated;

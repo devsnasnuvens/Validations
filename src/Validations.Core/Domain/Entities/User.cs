@@ -1,10 +1,8 @@
 ﻿using System;
-using Validations.Core.Domain.Shared;
-using Validations.Core.Domain.Validators;
 
 namespace Validations.Core.Domain.Entities
 {
-    public class User : BaseEntity
+    public class User
     {
         public User(string name, string email, string phoneNumber)
         {
@@ -12,10 +10,9 @@ namespace Validations.Core.Domain.Entities
             Name = name;
             Email = email;
             PhoneNumber = phoneNumber;
-
-            Validate(this, new UserValidator());
         }
 
+        public Guid Id { get; protected set; }
         public string Name { get; protected set; }
         public string Email { get; protected set; }
         public string PhoneNumber { get; protected set; }
