@@ -16,7 +16,7 @@ namespace Validations.WithExceptions.API.Controllers
         }
 
         [HttpPost]
-        public UserViewModel Create([FromBody] UserViewModel userViewModel)
+        public UserViewModel Create([FromBody] CreateUserViewModel userViewModel)
         {
             return _userAppService.CreateWithException(userViewModel);
         }

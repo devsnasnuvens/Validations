@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Validations.WithPatterns.API
+namespace Validations.WithNotificationAndResult.API
 {
     public class Program
     {

@@ -16,7 +16,7 @@ namespace Validations.Core.Application.Services
             _notificationContext = notificationContext;
         }
 
-        public UserViewModel CreateWithException(UserViewModel userViewModel)
+        public UserViewModel CreateWithException(CreateUserViewModel userViewModel)
         {
             if (string.IsNullOrEmpty(userViewModel.Name))
             {
@@ -46,7 +46,7 @@ namespace Validations.Core.Application.Services
             };
         }
 
-        public Result<UserViewModel> Create(UserViewModel userViewModel)
+        public UserViewModel CreateWithNotification(CreateUserViewModel userViewModel)
         {
             if (string.IsNullOrWhiteSpace(userViewModel.Name))
             {
@@ -68,14 +68,32 @@ namespace Validations.Core.Application.Services
 
             var user = new User(userViewModel.Name, userViewModel.Email, userViewModel.PhoneNumber);
 
-            return default;
-            //return new UserViewModel()
-            //{
-            //    Id = user.Id,
-            //    Name = user.Name,
-            //    Email = user.Email,
-            //    PhoneNumber = user.PhoneNumber
-            //};
+            return new UserViewModel()
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber
+            };
+        }
+
+        public Result<UserViewModel> CreateWithNotificationAndResult(CreateUserViewModel userViewModel)
+        {
+
+
+            var user = new User(userViewModel.Name, userViewModel.Email, userViewModel.PhoneNumber);
+
+            return new Result<UserViewModel>()
+            {
+                Succeeded = true,
+                Data = new UserViewModel()
+                {
+                    Id = user.Id,
+                    Name = user.Name,
+                    Email = user.Email,
+                    PhoneNumber = user.PhoneNumber
+                }
+            };
         }
     }
 }
