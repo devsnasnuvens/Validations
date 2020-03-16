@@ -9,6 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Validations.Core;
+using Validations.WithNotification.API.Filters;
 
 namespace Validations.WithNotification.API
 {
@@ -24,6 +26,11 @@ namespace Validations.WithNotification.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCore();
+
+            services.AddMvc(options => options.Filters.Add<NotificationFilter>())
+            .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
             services.AddControllers();
         }
 

@@ -5,7 +5,7 @@ using Validations.Core.Application.ViewModels;
 namespace Validations.WithExceptions.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly IUserAppService _userAppService;
