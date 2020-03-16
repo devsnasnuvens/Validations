@@ -68,6 +68,8 @@ namespace Validations.Core.Application.Services
 
             var user = new User(userViewModel.Name, userViewModel.Email, userViewModel.PhoneNumber);
 
+            // CODE TO INSERT USER IN DB HERE
+
             return new UserViewModel()
             {
                 Id = user.Id,
@@ -79,9 +81,27 @@ namespace Validations.Core.Application.Services
 
         public Result<UserViewModel> CreateWithNotificationAndResult(CreateUserViewModel userViewModel)
         {
+            if (string.IsNullOrWhiteSpace(userViewModel.Name))
+            {
+                _notificationContext.AddNotification("User", "Enter the User name!");
+            }
 
+            if (string.IsNullOrWhiteSpace(userViewModel.Email))
+            {
+                _notificationContext.AddNotification("User", "Enter the User e-mail!");
+            }
+
+            if (string.IsNullOrWhiteSpace(userViewModel.PhoneNumber))
+            {
+                _notificationContext.AddNotification("User", "Enter the User phone number!");
+            }
+
+            if (_notificationContext.HasNotifications)
+                return default;
 
             var user = new User(userViewModel.Name, userViewModel.Email, userViewModel.PhoneNumber);
+
+            // CODE TO INSERT USER IN DB HERE
 
             return new Result<UserViewModel>()
             {
